@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" attributeFormDefault="unqualified"
+	targetNamespace="http://www.buzonfiscal.com/ns/xsd/bf/remision/52"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:bfr5="http://www.buzonfiscal.com/ns/xsd/bf/remision/52"
+	xmlns:bfref1="http://www.buzonfiscal.com/ns/referenceID/v1">
+	<xs:import namespace="http://www.buzonfiscal.com/ns/referenceID/v1"
+		schemaLocation="RefIDv1.0.xsd"/>
+	<xs:element name="Remision" type="bfr5:RemisionComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Formato para la expresión de remisiones para
+				comprobantes fiscales digitales, basado en el esquema
+				del CFDv32
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="UbicacionComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Tipo definido para expresar domicilios o direcciones
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="calle">
+			<xs:annotation>
+				<xs:documentation>
+					Este atributo opcional sirve para precisar la
+					avenida, calle, camino o carretera donde se da la
+					ubicación.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="noExterior" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Este atributo opcional sirve para expresar el número
+					particular en donde se da la ubicación sobre una
+					calle dada.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="noInterior" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Este atributo opcional sirve para expresar
+					información adicional para especificar la ubicación
+					cuando calle y número exterior (noExterior) no
+					resulten suficientes para determinar la ubicación de
+					forma precisa.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="colonia" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Este atributo opcional sirve para precisar la
+					colonia en donde se da la ubicación cuando se desea
+					ser más específico en casos de ubicaciones urbanas.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="localidad" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo opcional que sirve para precisar la ciudad
+					o población donde se da la ubicación.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="referencia" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo opcional para expresar una referencia de
+					ubicación adicional.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="municipio" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo opcional que sirve para precisar el
+					municipio o delegación (en el caso del Distrito
+					Federal) en donde se da la ubicación.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="estado" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo opcional que sirve para precisar el estado
+					o entidad federativa donde se da la ubicación.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="pais" use="required">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo requerido que sirve para precisar el país
+					donde se da la ubicación.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="codigoPostal" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo opcional que sirve para asentar el código
+					postal en donde se da la ubicación.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="UbicacionFiscalComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Tipo definido para expresar domicilios o direcciones
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="calle" use="required">
+			<xs:annotation>
+				<xs:documentation>
+					Este atributo requerido sirve para precisar la
+					avenida, calle, camino o carretera donde se da la
+					ubicación.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="noExterior" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Este atributo opcional sirve para expresar el número
+					particular en donde se da la ubicación sobre una
+					calle dada.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="noInterior" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Este atributo opcional sirve para expresar
+					información adicional para especificar la ubicación
+					cuando calle y número exterior (noExterior) no
+					resulten suficientes para determinar la ubicación de
+					forma precisa.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="colonia" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Este atributo opcional sirve para precisar la
+					colonia en donde se da la ubicación cuando se desea
+					ser más específico en casos de ubicaciones urbanas.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="localidad" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo opcional que sirve para precisar la ciudad
+					o población donde se da la ubicación.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="referencia" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo opcional para expresar una referencia de
+					ubicación adicional.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="municipio" use="required">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo requerido que sirve para precisar el
+					municipio o delegación (en el caso del Distrito
+					Federal) en donde se da la ubicación.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="estado" use="required">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo requerido que sirve para precisar el estado
+					o entidad federativa donde se da la ubicación.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="pais" use="required">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo requerido que sirve para precisar el país
+					donde se da la ubicación.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="codigoPostal" use="required">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo requerido que sirve para asentar el código
+					postal en donde se da la ubicación.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+					<xs:length value="5"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="rfcSimpleType">
+		<xs:annotation>
+			<xs:documentation>
+				Tipo definido para expresar claves del Registro Federal
+				de Contribuyentes
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="12"/>
+			<xs:maxLength value="13"/>
+			<xs:whiteSpace value="collapse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ImporteSimpleType">
+		<xs:annotation>
+			<xs:documentation>
+				Tipo definido para expresar importes numéricos con
+				fracción a dos decimales
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="6"/>
+			<xs:whiteSpace value="collapse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="InformacionAduaneraComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Tipo definido para expresar información aduanera
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="numero" use="required">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo requerido para expresar el número del
+					documento aduanero que ampara la importación del
+					bien.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="fecha" use="required">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo requerido para expresar la fecha de
+					expedición del documento aduanero que ampara la
+					importación del bien.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:date">
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="aduana">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo opcional para precisar la aduana por la
+					que se efectuó la importación del bien.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="Addenda" type="bfr5:AddendaComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Nodo opcional para recibir las extensiones al presente
+				formato que sean de utilidad al contribuyente. Para las
+				reglas de uso del mismo, referirse al formato de origen.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Complemento" type="bfr5:ComplementoComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Nodo opcional donde se incluirán los nodos
+				complementarios determinados por el SAT, de acuerdo a
+				las disposiciones particulares a un sector o actividad
+				especifica.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Impuestos" type="bfr5:ImpuestosComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Nodo requerido para capturar los impuestos aplicables.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Conceptos" type="bfr5:ConceptosComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Nodo requerido para enlistar los conceptos cubiertos por
+				el comprobante.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Receptor" type="bfr5:ReceptorComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Nodo requerido para precisar la información del
+				contribuyente receptor del comprobante.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Emisor" type="bfr5:EmisorComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Nodo requerido para expresar la información del
+				contribuyente emisor del comprobante.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="serieSimpleType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="25"/>
+			<xs:whiteSpace value="collapse"/>
+			<xs:pattern value="[A-Z]{1,25}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="Concepto" type="bfr5:ConceptoComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Nodo para introducir la información detallada de un bien
+				o servicio amparado en el comprobante.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ConceptosComplexType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" ref="bfr5:Concepto"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConceptoComplexType">
+		<xs:choice minOccurs="0">
+			<xs:element ref="bfr5:InformacionAduanera" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+			<xs:element ref="bfr5:CuentaPredial" minOccurs="0"/>
+			<xs:element ref="bfr5:ComplementoConcepto" minOccurs="0"/>
+			<xs:element ref="bfr5:Parte" minOccurs="0" maxOccurs="unbounded"> </xs:element>
+		</xs:choice>
+		<xs:attribute use="required" name="cantidad">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:decimal">
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="required" name="unidad">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="optional" name="noIdentificacion">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="required" name="descripcion">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="required" name="valorUnitario" type="bfr5:ImporteSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+		<xs:attribute use="required" name="importe" type="bfr5:ImporteSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="RemisionComplexType">
+		<xs:sequence>
+			<xs:element ref="bfr5:InfoBasica" minOccurs="1" maxOccurs="1"> </xs:element>
+			<xs:element ref="bfr5:InfoAdicional" minOccurs="1" maxOccurs="1"> </xs:element>
+			<xs:element maxOccurs="1" ref="bfr5:Emisor"/>
+			<xs:element ref="bfr5:DomicilioFiscal" minOccurs="0"/>
+			<xs:element ref="bfr5:ExpedidoEn" minOccurs="0"/>
+			<xs:element maxOccurs="1" ref="bfr5:Receptor"> </xs:element>
+			<xs:element ref="bfr5:DomicilioReceptor" maxOccurs="1" minOccurs="0"> </xs:element>
+			<xs:element ref="bfr5:Conceptos" minOccurs="1" maxOccurs="1"/>
+			<xs:element ref="bfr5:Impuestos" maxOccurs="1"/>
+			<xs:element minOccurs="0" ref="bfr5:Complemento"/>
+			<xs:element minOccurs="0" ref="bfr5:Addenda"/>
+		</xs:sequence>
+		<xs:attribute name="version" use="required" fixed="5.2">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo requerido con valor prefijado a 5.2 que
+					indica la versión del estándar bajo el que se
+					encuentra expresado la remisión.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="InfoBasicaComplexType">
+		<xs:sequence>
+			<xs:element ref="bfr5:InfoEspecial" minOccurs="0" maxOccurs="10"> </xs:element>
+		</xs:sequence>
+		<xs:attribute use="required" name="rfcEmisor" type="bfr5:rfcSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+		<xs:attribute use="required" name="rfcReceptor" type="bfr5:rfcSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+		<xs:attribute use="optional" name="rfcSolicitante" type="bfr5:rfcSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+		<xs:attribute use="optional" name="serie" type="bfr5:serieSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+		<xs:attribute use="optional" name="aliasSucursal" type="xs:string"> </xs:attribute>
+		<xs:attribute name="refID" type="bfref1:refIDType"> </xs:attribute>
+		<xs:attribute name="folio" use="optional">
+			<xs:annotation>
+				<xs:documentation>
+					Atributo opcional para control interno del
+					contribuyente que acepta un valor numérico entero
+					superior a 0 que expresa el folio del comprobante.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="20"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="asignaFolio" type="xs:boolean" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="InfoAdicionalComplexType">
+		<xs:attribute use="required" name="formaDePago">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="optional" name="condicionesDePago">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="required" name="subTotal" type="bfr5:ImporteSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+		<xs:attribute use="optional" name="descuento" type="bfr5:ImporteSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+		<xs:attribute use="optional" name="motivoDescuento">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="required" name="total" type="bfr5:ImporteSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+		<xs:attribute use="required" name="metodoDePago">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="required" name="tipoDeComprobante">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="ingreso"/>
+					<xs:enumeration value="egreso"/>
+					<xs:enumeration value="traslado"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="moneda" type="xs:string"/>
+		<xs:attribute name="tipoCambio" type="xs:string"/>
+		<xs:attribute name="lugarExpedicion" use="required">
+			<xs:annotation>
+				<xs:documentation>Atributo requerdio para precisar el lugar de Expedicion. Este atributo acepta una cadena de caracteres alfabéticos sin incluir caracteres acentuados. Ej. Monterrey, Nuevo Leon</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="optional" name="numCtaPago">
+			<xs:annotation>
+				<xs:documentation>Atributo Opcional para incorporar al menos los cuatro últimos
+					digitos del número de cuenta con la que se realizó el
+					pago.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="4"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="optional" name="folioFiscalOrig">
+			<xs:annotation>
+				<xs:documentation>Atributo opcional para señalar el número de folio fiscal del
+					comprobante que se hubiese expedido por el valor total del comprobante,
+					tratándose del pago en parcialidades.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+
+		<xs:attribute use="optional" name="serieFiscalOrig">
+			<xs:annotation>
+				<xs:documentation>Atributo opcional para señalarla serie de folio fiscal del
+					comprobante que se hubiese expedido por el valor total del comprobante,
+					tratándose del pago en parcialidades.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+
+		<xs:attribute use="optional" name="fechaFolioFiscalOrig">
+			<xs:annotation>
+				<xs:documentation> Atributo opcional para señalar la fecha de expedición del
+					comprobante que se hubiese emitido por el valor total del comprobante,
+					tratándose del pago en parcialidades. Se expresa en la forma
+					aaaa-mm-ddThh:mm:ss, de acuerdo con la especificación ISO
+					8601.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:dateTime">
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="montoFolioFiscalOrig" type="bfr5:ImporteSimpleType">
+			<xs:annotation>
+				<xs:documentation>Atributo opcional para señalar el total del comprobante que se
+					hubiese expedido por el valor total de la operación, tratándose del pago en
+					parcialidades</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ReceptorComplexType">
+		<xs:attribute use="required" name="nombre">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="RegimenComplexType">
+		<xs:attribute use="required" name="Regimen">
+			<xs:annotation>
+				<xs:documentation>Atributo requerido para incorporar
+					el nombre del régimen en el que tributa el
+					contribuyente emisor.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="DomicilioReceptor" type="bfr5:UbicacionComplexType">
+		<xs:annotation/>
+	</xs:element>
+	<xs:element name="DomicilioFiscal" type="bfr5:UbicacionFiscalComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Nodo opcional para precisar la información de ubicación
+				del domicilio fiscal del contribuyente emisor
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ExpedidoEn" type="bfr5:UbicacionComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Nodo opcional para precisar la información de ubicación
+				del domicilio en donde es emitido el comprobante fiscal
+				en caso de que sea distinto del domicilio fiscal del
+				contribuyente emisor.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Retenciones" type="bfr5:RetencionesComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Nodo opcional para capturar los impuestos retenidos
+				aplicables
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="Traslados" type="bfr5:TrasladosComplexType">
+		<xs:annotation>
+			<xs:documentation>
+				Nodo opcional para asentar o referir los impuestos
+				trasladados aplicables
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="InformacionAduanera" type="bfr5:InformacionAduaneraComplexType">
+		<xs:annotation/>
+	</xs:element>
+	<xs:element name="CuentaPredial" type="bfr5:CuentaPredialComplexType">
+		<xs:annotation/>
+	</xs:element>
+	<xs:element name="ComplementoConcepto" type="bfr5:ComplementoConceptoComplexType">
+		<xs:annotation/>
+	</xs:element>
+	<xs:element name="Parte" type="bfr5:ParteComplexType">
+		<xs:annotation/>
+	</xs:element>
+	<xs:complexType name="AddendaComplexType">
+		<xs:sequence>
+			<xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplementoComplexType">
+		<xs:sequence>
+			<xs:any minOccurs="0" maxOccurs="unbounded" processContents="strict"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ComplementoConceptoComplexType">
+		<xs:sequence>
+			<xs:any minOccurs="0" maxOccurs="unbounded" processContents="strict"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CuentaPredialComplexType">
+		<xs:attribute use="required" name="numero">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="EmisorComplexType">
+		<xs:sequence>
+			<xs:element ref="bfr5:RegimenFiscal" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="nombre">
+			<xs:annotation>
+				<xs:documentation>Atributo opcional para el nombre, denominación o
+					razón social del contribuyente emisor del
+					comprobante.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ImpuestosComplexType">
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="bfr5:Retenciones"/>
+			<xs:element minOccurs="0" ref="bfr5:Traslados"/>
+		</xs:sequence>
+		<xs:attribute use="optional" name="totalImpuestosRetenidos" type="bfr5:ImporteSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+		<xs:attribute use="optional" name="totalImpuestosTrasladados" type="bfr5:ImporteSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ParteComplexType">
+		<xs:sequence>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="InformacionAduanera"
+				type="bfr5:InformacionAduaneraComplexType">
+				<xs:annotation/>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute use="required" name="cantidad">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:decimal">
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="optional" name="unidad">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="optional" name="noIdentificacion">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="required" name="descripcion">
+			<xs:annotation/>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="optional" name="valorUnitario" type="bfr5:ImporteSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+		<xs:attribute use="optional" name="importe" type="bfr5:ImporteSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="RetencionesComplexType">
+		<xs:sequence>
+			<xs:element ref="bfr5:Retencion" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Retencion" type="bfr5:RetencionComplexType">
+		<xs:annotation/>
+	</xs:element>
+	<xs:complexType name="RetencionComplexType">
+		<xs:attribute use="required" name="impuesto" type="bfr5:impuestoRetencionSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+		<xs:attribute use="required" name="importe" type="bfr5:ImporteSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="TrasladosComplexType">
+		<xs:sequence>
+			<xs:element ref="bfr5:Traslado" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="Traslado" type="bfr5:TrasladoComplexType">
+		<xs:annotation/>
+	</xs:element>
+	<xs:complexType name="TrasladoComplexType">
+		<xs:attribute use="required" name="impuesto" type="bfr5:impuestoTrasladoSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+		<xs:attribute use="required" name="tasa" type="bfr5:ImporteSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+		<xs:attribute use="required" name="importe" type="bfr5:ImporteSimpleType">
+			<xs:annotation/>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="impuestoTrasladoSimpleType">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="IVA">
+				<xs:annotation/>
+			</xs:enumeration>
+			<xs:enumeration value="IEPS">
+				<xs:annotation/>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="impuestoRetencionSimpleType">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="ISR">
+				<xs:annotation/>
+			</xs:enumeration>
+			<xs:enumeration value="IVA">
+				<xs:annotation/>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="InfoBasica" type="bfr5:InfoBasicaComplexType"/>
+	<xs:element name="InfoAdicional" type="bfr5:InfoAdicionalComplexType"> </xs:element>
+	<xs:element name="InfoEspecial" type="bfr5:InfoEspecialComplexType"> </xs:element>
+	<xs:complexType name="InfoEspecialComplexType">
+		<xs:attribute use="required" name="atributo">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="required" name="valor">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="RegimenFiscal" type="bfr5:RegimenComplexType">
+		<xs:annotation>
+			<xs:documentation> Nodo requerido para incorporar el nombre del régimen en el que
+				tributa el contribuyente emisor. </xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<cfdi:Comprobante xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd" Version="3.3" Serie="TEST" Folio="156" Fecha="2021-07-15T17:42:58" Sello="kc0hxrNti0nI+AJBWKPR4B8NrRU4g/7Ko/TW3X1Bm0i1nrYkP5JXpwgOrWzvk4kjycKShz0maxyZLp8TOm++erTACJh//nqsYhvHQtYaFr9xOaP8WsJf0pSrUnmDvGSRoK231NJ+OXYfIpY9cXnnWCn9it905o7fLm4/SmHogcFZAixMQnEFfzUfb+VKjEVTcsF/xMhLc8cbVpk+Adn0lB9cbjTnH30AHOO3vNMAGM7ldh5l29v0QRyeVF+XcBOoFY4dKHk6DxHKrcULrYsoLJ90PMf4bsKvie4uLzHPgxPUHC0b/Fef/DxDi9i7A/kv09GHnteGhiBdSTDMXU9fpQ==" FormaPago="99" NoCertificado="30001000000400002495" Certificado="MIIFeDCCA2CgAwIBAgIUMzAwMDEwMDAwMDA0MDAwMDI0OTUwDQYJKoZIhvcNAQELBQAwggErMQ8wDQYDVQQDDAZBQyBVQVQxLjAsBgNVBAoMJVNFUlZJQ0lPIERFIEFETUlOSVNUUkFDSU9OIFRSSUJVVEFSSUExGjAYBgNVBAsMEVNBVC1JRVMgQXV0aG9yaXR5MSgwJgYJKoZIhvcNAQkBFhlvc2Nhci5tYXJ0aW5lekBzYXQuZ29iLm14MR0wGwYDVQQJDBQzcmEgY2VycmFkYSBkZSBjYWRpejEOMAwGA1UEEQwFMDYzNzAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBDSVVEQUQgREUgTUVYSUNPMREwDwYDVQQHDAhDT1lPQUNBTjERMA8GA1UELRMIMi41LjQuNDUxJTAjBgkqhkiG9w0BCQITFnJlc3BvbnNhYmxlOiBBQ0RNQS1TQVQwHhcNMTkwNjI2MjIzMzI2WhcNMjMwNjI2MjIzMzI2WjCBnzEUMBIGA1UEAxMLU0FUIFBSVUVCQVMxFDASBgNVBCkTC1NBVCBQUlVFQkFTMRQwEgYDVQQKEwtTQVQgUFJVRUJBUzElMCMGA1UELRMcU1BSMTkwNjEzSTUyIC8gQ0FDWDc2MDUxMDFQODEeMBwGA1UEBRMVIC8gQ0FDWDc2MDUxME1HVFNIQzA0MRQwEgYDVQQLEwtTQVQgUFJVRUJBUzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALKEMefwAbkE07Gy07ZIQm7mETva4Zhq4g6qWIVSQDnf0XKwu0Oo/1Yy1zj8LxsR1Gn8Oh+1ndAxZciyWx/ahXCgw5oNBiPYJrNl3QsvzhIC9M8HOKJ16dIIZvUJQ9FvaCQnU1UmzxRor+sgjpW/h0xJTfVk7YSWu+V2/y4y6YclMXk25ETvCJBmKCG0Q0Ukav4F5lgp1+Twxla4lEmb5FkoUv/Pbs9gcQ5OvEpMPyrJllTp5CQ0ZaA6kmE6kwnqCZsKSap1mEHzX8z3IkcL3n6eUHsGWMSiAavXzL/lUGUERZ5ur8PXu3zCG6C4aO/tneTDGF8imhvRc1bTgAW/KPUCAwEAAaMdMBswDAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBsAwDQYJKoZIhvcNAQELBQADggIBAAHmEbxYLe6Ee3im4OCT8RXFcylV32OH5gd5xU2J6xPktX+H1vBSKU4JZ5ugtyxJCaeBs0JxpTBQ1to3v6Rr0NfjPEDIaa50LX7m5NLtrjn0gHs1rZv0SwK3eFS1EPtiQ9p8GQ4t+JcPoaKD+SvP708vSR7ll8EHoih/ZVacRuLc9ezjMZLPEvin/SMvpA9Wb069+wHwvtB/tpV/SIUI5y9U2pAbWgszdTmljn6ECST4kuQ8P4pCNKgyj3nnPBIBQSuAW3rEbqJ4A+1rWsOr0Y5OaZmsPs0a5l/pxDYz8LfICD1RH27tL0BToJgTjEutVfWJzOHHU6xtOLhPlv5XTxYfRTERpYstm2g1vijoSrbToo2oMEA/abLxdBCLuacyv0aCFO2r8EWI2XF/Yf6QjXmMsuLFJS0M2losEUkpnLCb7uegLuwGTy8gK7rAGcNb8KR0p9x5ateqkGxKvzfHqAcHoFNNfDw9LNyzxw5bA4Bsnuysoy5W12DiRvYcRpu8qYS1I3TglyB/8NYh7HP/3IvQvog+jbKYCWeBPfCxumCmodKGGO8t52RhhYY9KwrnJA8a+X+KukhWOEbw0+Z8LPdJvHg4QBqKXyjrhBDHzZgOXEkz+Zg5sgNmIx2AGruYty7hgwOxSRTl3ZqfOplUqsswljBsPtGPCdIoC1/7JvI5" CondicionesDePago="CREDITO 30 DIAS" SubTotal="22366.08" Moneda="MXN" Total="22366.08" TipoDeComprobante="I" MetodoPago="PPD" LugarExpedicion="64700" xmlns:cfdi="http://www.sat.gob.mx/cfd/3">
+  <cfdi:Emisor Rfc="MDI991214A74" Nombre="MILENIO DIARIO, S.A. DE C.V." RegimenFiscal="601"/>
+  <cfdi:Receptor Rfc="MEO9012269E4" Nombre="MULTIMEDIOS ESTRELLAS DE ORO, S.A. DE C.V." UsoCFDI="G03"/>
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="82101504" Cantidad="504.00" ClaveUnidad="E48" Unidad="NO APLICA" Descripcion="POR CONCEPTO DE PUBLICIDAD M. DIARIO FED" ValorUnitario="7.52000" Importe="3790.08">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="3790.08" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00"/>
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="82101504" Cantidad="2212.00" ClaveUnidad="E48" Unidad="NO APLICA" Descripcion="POR CONCEPTO DE PUBLICIDAD M. DIARIO FED" ValorUnitario="6.75000" Importe="14931.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="14931.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00"/>
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+    <cfdi:Concepto ClaveProdServ="82101504" Cantidad="540.00" ClaveUnidad="E48" Unidad="NO APLICA" Descripcion="POR CONCEPTO DE PUBLICIDAD M. DIARIO FED" ValorUnitario="6.75000" Importe="3645.00">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="3645.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00"/>
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosTrasladados="0.00">
+    <cfdi:Traslados>
+      <cfdi:Traslado Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0.00"/>
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+        <tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd" Version="1.1" UUID="79eaca33-a33b-4a67-9bd7-ad5cb4127458" RfcProvCertif="SPR190613I52" FechaTimbrado="2021-07-15T17:43:48" SelloCFD="kc0hxrNti0nI+AJBWKPR4B8NrRU4g/7Ko/TW3X1Bm0i1nrYkP5JXpwgOrWzvk4kjycKShz0maxyZLp8TOm++erTACJh//nqsYhvHQtYaFr9xOaP8WsJf0pSrUnmDvGSRoK231NJ+OXYfIpY9cXnnWCn9it905o7fLm4/SmHogcFZAixMQnEFfzUfb+VKjEVTcsF/xMhLc8cbVpk+Adn0lB9cbjTnH30AHOO3vNMAGM7ldh5l29v0QRyeVF+XcBOoFY4dKHk6DxHKrcULrYsoLJ90PMf4bsKvie4uLzHPgxPUHC0b/Fef/DxDi9i7A/kv09GHnteGhiBdSTDMXU9fpQ==" NoCertificadoSAT="30001000000400002495" SelloSAT="kCFsMYXI4MGuUiFicKBxtW9y2a55cEKvGSP8fTVxRGChtkJO2KeUQj+KzJcpmwY/wJ4ZOgrIN4/usfJGbH3YW2DNRarrGdlagKYj+9moXGBn9BfmHx+SnogEMZ43vwqP2NLJt8QzVaG4J9XDFY6QuEBM9WYK1xeH09BqJfLiOSX3mOGOhI+HnHaIkVwry42v2OMbz4E5kunNiOYYZx0Cc6ZZwdhu7xgDhJXOY8ojwhBerjMZht/SwnkFQTP52n3hxWcJ7F7DrLRjHka/05+4wVg439r3PB8wBz/FBIRV+/IaqbxSEjwgzXy/9oKtnNeOTIvdee0qeLxryb8aILa26g=="/>
+    </cfdi:Complemento><cfdi:Addenda>
+    <diverza xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tdCFDI="http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI" xsi:schemaLocation="http://www.diverza.com/ns/addenda/diverza/1 file:/Users/osvaldosanchez/Documents/DIVERZA/Addenda_Diverza_v1.1.xsd" version="1.1" xmlns="http://www.diverza.com/ns/addenda/diverza/1">
+      <generales tipoDocumento="Factura" totalConLetra="( VEINTIDOS MIL TRESCIENTOS SESENTA Y SEIS  PESOS  08/100 M.N. )" numeroOrden=""/>
+      <clavesDescripcion c_FormaPago="Por definir" c_Moneda="MXN" c_TipoDeComprobante="I" c_MetodoPago="Pago en parcialidades o diferido" c_LugarExpedicion="64700" c_RegimenFiscal="General de Ley Personas Morales" c_UsoCFDI="Gastos en general"/>
+      <emisor vendedor="1">
+        <datosContactoE telefono="TEL. (81) 8150-5500" emailComercial="mario.grimaldo@multimedios.com miguel.reyna;rene.fuentes@multimedios.com" emailContacto="FAX. (81) 8150-5567" web="www.milenio.com"/>
+        <domicilioFiscalE calle="MORELOS" numero="16" colonia="CENTRO" ciudad="DEL. CUAUHTEMOC" municipio="DEL. CUAUHTEMOC" estado="CIUDAD DE MEXICO" pais="MEXICO" codigoPostal="06040"/>
+      </emisor>
+      <receptor numCliente="00000001            ">
+        <datosContactoR telefono="7880500" emailComercial="mario.grimaldo@multimedios.com miguel.reyna;rene.fuentes@multimedios.com" web="www.milenio.com"/>
+        <domicilioFiscalR calle="EUGENIO GARZA SADA" numero="2145" colonia="ROMA" ciudad="MONTERREY" municipio="MONTERREY" estado="NUEVO LEON" pais="MEXICO" codigoPostal="64700"/>
+      </receptor>
+      <conceptos numeroConceptos="1">
+        <concepto identificador1="ID1" mensaje="FILIAL"/>
+      </conceptos>
+    </diverza>
+  </cfdi:Addenda>
+</cfdi:Comprobante>

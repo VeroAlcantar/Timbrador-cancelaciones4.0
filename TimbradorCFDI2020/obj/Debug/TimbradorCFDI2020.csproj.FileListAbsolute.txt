@@ -1,0 +1,42 @@
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.exe.config
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.exe.manifest
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.application
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.exe
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.pdb
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.csprojAssemblyReference.cache
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.Properties.Resources.resources
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.VistaInicial.resources
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.csproj.GenerateResource.cache
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.csproj.CoreCompileInputs.cache
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.exe.manifest
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.application
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.exe
+C:\desarrollos\Milenio\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.pdb
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.exe
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.pdb
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.exe.config
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.exe.manifest
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.application
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.Properties.Resources.resources
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.VistaInicial.resources
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.csproj.GenerateResource.cache
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.csproj.CoreCompileInputs.cache
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.exe.manifest
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.application
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.exe
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.pdb
+C:\desarrollos\Milenio\12Enero2021\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.csprojAssemblyReference.cache
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.csprojAssemblyReference.cache
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.Properties.Resources.resources
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.VistaInicial.resources
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.csproj.GenerateResource.cache
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.csproj.CoreCompileInputs.cache
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.exe
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.pdb
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.exe.config
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.exe.manifest
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.application
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.exe
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.pdb
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.exe.manifest
+C:\desarrollos\Milenio\Timbrador\borrar\dañados\versiones antiguas\12Enero2021 solo cancelaciones\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.application

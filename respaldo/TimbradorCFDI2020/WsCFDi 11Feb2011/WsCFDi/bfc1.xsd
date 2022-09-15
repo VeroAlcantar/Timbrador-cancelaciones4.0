@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://www.buzonfiscal.com/ns/bf/conector/1"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.buzonfiscal.com/ns/bf/conector/1">
+    <xsd:annotation>
+    	<xsd:documentation>Esquema para representar mensajes del procesamiento</xsd:documentation></xsd:annotation>
+    <xsd:complexType name="messageType">
+        <xsd:annotation>
+        	<xsd:documentation>Tipo de dato para mensaje que indica alguna situación de excepción en el procesamiento</xsd:documentation>
+        </xsd:annotation>
+        <xsd:attribute name="code" use="required">
+            <xsd:annotation>
+            	<xsd:documentation>Código de procesamiento</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+    			<xsd:restriction base="xsd:int">
+    				<xsd:minExclusive value="1"></xsd:minExclusive>
+    			</xsd:restriction>
+    		</xsd:simpleType>
+    	</xsd:attribute>
+    	<xsd:attribute name="message" use="optional" type="xsd:string">
+    		<xsd:annotation>
+    			<xsd:documentation>Mensaje de procesamiento</xsd:documentation>
+    		</xsd:annotation></xsd:attribute>
+    </xsd:complexType>
+    <xsd:element name="Result">
+        <xsd:annotation>
+        	<xsd:documentation>Elemento que encapsula los mensajes derivados del procesamiento</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+    		<xsd:sequence>
+    			<xsd:element name="Message" type="messageType"
+    				minOccurs="0" maxOccurs="unbounded">
+                    <xsd:annotation>
+                    	<xsd:documentation>Mensajes de procesamiento</xsd:documentation>
+                    </xsd:annotation>
+    			</xsd:element>
+    		</xsd:sequence>
+    		<xsd:attribute name="version" type="xsd:int" use="required" fixed="1">
+    			<xsd:annotation>
+    				<xsd:documentation>Versión del formato de resultado</xsd:documentation>
+    			</xsd:annotation></xsd:attribute>
+    	</xsd:complexType></xsd:element>
+</xsd:schema>

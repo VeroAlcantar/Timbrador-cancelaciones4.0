@@ -1,0 +1,17 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.buzonfiscal.com/ns/xsd/bf/bfcorp/3" xmlns:ns1="http://www.buzonfiscal.com/ns/bf/conector/1" xmlns:ns2="http://www.buzonfiscal.com/ns/xsd/bf/remision/5">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:ResponseGeneraCFDi>
+         <!--Optional:-->
+         <ns1:Result version="1">
+            <!--Zero or more repetitions:-->
+            <ns1:Message code="?" message="?"/>
+         </ns1:Result>
+         <!--Optional:-->
+         <ns:InfoCFDi serie="?" folio="?" fecha="?" sello="?" noCertificado="?" archivo="cid:328950387997" tipo="?" version="?" uuid="?" qr="cid:689802010425" fechaTimbrado="?" refId="?" noCertificadoSAT="?">
+            <!--0 to 10 repetitions:-->
+            <ns2:InfoEspecial atributo="?" valor="?"/>
+         </ns:InfoCFDi>
+      </ns:ResponseGeneraCFDi>
+   </soapenv:Body>
+</soapenv:Envelope>

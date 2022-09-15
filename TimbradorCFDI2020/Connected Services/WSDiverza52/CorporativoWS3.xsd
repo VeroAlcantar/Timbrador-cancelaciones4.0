@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:bfgenxsd="http://www.buzonfiscal.com/ns/xsd/bf/RequestGeneraCFDI" xmlns:bfc1="http://www.buzonfiscal.com/ns/bf/conector/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bfref1="http://www.buzonfiscal.com/ns/referenceID/v1" xmlns:bfr5="http://www.buzonfiscal.com/ns/xsd/bf/remision/52" xmlns:bfcorp3xsd="http://www.buzonfiscal.com/ns/xsd/bf/bfcorp/32" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.buzonfiscal.com/ns/xsd/bf/bfcorp/32" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="RequestGeneraCFDI.xsd" namespace="http://www.buzonfiscal.com/ns/xsd/bf/RequestGeneraCFDI" />
+  <xs:import schemaLocation="RemisionV5.2.xsd" namespace="http://www.buzonfiscal.com/ns/xsd/bf/remision/52">
+    <xs:annotation>
+      <xs:documentation> Importacion del schema XSD de CFD v32 </xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:import schemaLocation="bfc1.xsd" namespace="http://www.buzonfiscal.com/ns/bf/conector/1">
+    <xs:annotation>
+      <xs:documentation> Importacion del schema XSD de Mensajes de conector v1
+			</xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:import schemaLocation="RefIDv1.0.xsd" namespace="http://www.buzonfiscal.com/ns/referenceID/v1">
+    <xs:annotation>
+      <xs:documentation> Importacion del schema XSD de Addenda </xs:documentation>
+    </xs:annotation>
+  </xs:import>
+  <xs:import schemaLocation="cfdv32.xsd" namespace="http://www.sat.gob.mx/cfd/3" />
+  <xs:element name="ResponseGeneraCFDi" type="bfcorp3xsd:ResponseGeneraCFDiType" />
+  <xs:complexType name="ResponseGeneraCFDiType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" ref="bfc1:Result" />
+      <xs:element minOccurs="0" maxOccurs="1" ref="bfcorp3xsd:InfoCFDi" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestGeneraCFDi" type="bfcorp3xsd:RequestGeneraCFDiType" />
+  <xs:complexType name="RequestGeneraCFDiType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" ref="bfr5:InfoBasica">
+        <xs:annotation>
+          <xs:documentation />
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="bfgenxsd:Documento">
+        <xs:annotation>
+          <xs:documentation>El elemento documento es utilizado para especificar la remision que sera procesada por el sistema.
+</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RequestCancelaCFDi" type="bfcorp3xsd:RequestCancelaCFDiType" />
+  <xs:complexType name="RequestCancelaCFDiType">
+    <xs:attribute name="rfcEmisor" type="cfdi:t_RFC" use="required" />
+    <xs:attribute name="rfcReceptor" type="cfdi:t_RFC" use="required" />
+    <xs:attribute name="uuid" type="xs:string" use="required" />
+    <xs:attribute name="refID" type="bfref1:refIDType" use="optional" />
+  </xs:complexType>
+  <xs:element name="ResponseCancelaCFDi" type="bfcorp3xsd:ResponseCancelaCFDiType" />
+  <xs:complexType name="ResponseCancelaCFDiType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" ref="bfc1:Result" />
+    </xs:sequence>
+    <xs:attribute name="canceled" type="xs:boolean" use="required" />
+    <xs:attribute name="fecha" type="xs:dateTime" use="optional" />
+  </xs:complexType>
+  <xs:simpleType name="mesType">
+    <xs:restriction base="xs:int">
+      <xs:maxInclusive value="12" />
+      <xs:whiteSpace value="collapse" />
+      <xs:minInclusive value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="anioType">
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="2004" />
+      <xs:whiteSpace value="collapse" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="InfoCFDiComplexType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="10" ref="bfr5:InfoEspecial" />
+    </xs:sequence>
+    <xs:attribute name="serie" type="bfr5:serieSimpleType" use="optional" />
+    <xs:attribute name="folio" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:long">
+          <xs:maxInclusive value="2147483647" />
+          <xs:minInclusive value="1" />
+          <xs:whiteSpace value="collapse" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="fecha" type="xs:dateTime" use="required" />
+    <xs:attribute name="sello" use="optional">
+      <xs:annotation />
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:whiteSpace value="collapse" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="noCertificado" use="optional">
+      <xs:annotation />
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="20" />
+          <xs:whiteSpace value="collapse" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="archivo" type="xs:base64Binary" use="required">
+      <xs:annotation>
+        <xs:documentation>El elemento documento es utilizado para especificar la remision que sera procesada por el sistema.
+				</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="tipo" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="XML" />
+          <xs:enumeration value="ZIP" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="version" type="xs:string" use="required" />
+    <xs:attribute name="uuid" type="xs:string" />
+    <xs:attribute name="qr" type="xs:base64Binary" />
+    <xs:attribute name="fechaTimbrado" type="xs:dateTime" />
+    <xs:attribute name="refId" type="bfref1:refIDType" />
+    <xs:attribute name="noCertificadoSAT" use="optional">
+      <xs:annotation />
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:length value="20" />
+          <xs:whiteSpace value="collapse" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:element name="InfoCFDi" type="bfcorp3xsd:InfoCFDiComplexType" />
+</xs:schema>

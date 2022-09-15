@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.buzonfiscal.com/ns/xsd/bf/bfcorp/3"
+	elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:bfc1="http://www.buzonfiscal.com/ns/bf/conector/1" xmlns:bfcorp2xsd="http://www.buzonfiscal.com/ns/xsd/bf/bfcorp/3" xmlns:bfref1="http://www.buzonfiscal.com/ns/referenceID/v1" xmlns:bfr5="http://www.buzonfiscal.com/ns/xsd/bf/remision/5">
+
+	<xs:import namespace="http://www.buzonfiscal.com/ns/xsd/bf/remision/5"
+		schemaLocation="RemisionV5.0.xsd">
+		<xs:annotation>
+			<xs:documentation>
+				Importacion del schema XSD de CFD v2
+			</xs:documentation>
+		</xs:annotation>
+	</xs:import>
+	<xs:import namespace="http://www.buzonfiscal.com/ns/bf/conector/1"
+		schemaLocation="bfc1.xsd">
+		<xs:annotation>
+			<xs:documentation>
+				Importacion del schema XSD de Mensajes de conector
+				v1
+			</xs:documentation>
+		</xs:annotation>
+	</xs:import>
+	<xs:import namespace="http://www.buzonfiscal.com/ns/referenceID/v1"
+		schemaLocation="RefIDv1.0.xsd">
+		<xs:annotation>
+			<xs:documentation>
+				Importacion del schema XSD de Addenda
+			</xs:documentation>
+		</xs:annotation>
+	</xs:import>
+	<xs:import namespace="http://www.sat.gob.mx/cfd/3"
+		schemaLocation="cfdv3.xsd"></xs:import>
+	<xs:element name="ResponseGeneraCFDi" type="bfcorp2xsd:ResponseGeneraCFDiType">
+	</xs:element>
+	<xs:complexType name="ResponseGeneraCFDiType">
+		<xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" ref="bfc1:Result"></xs:element>
+            <xs:element ref="bfcorp2xsd:InfoCFDi" minOccurs="0"
+				maxOccurs="1">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="RequestGeneraCFDi" type="bfcorp2xsd:RequestGeneraCFDiType">
+	</xs:element>
+
+	<xs:complexType name="RequestGeneraCFDiType">
+		<xs:sequence>
+			<xs:element ref="bfr5:Remision" minOccurs="1" maxOccurs="1">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="RequestCancelaCFDi" type="bfcorp2xsd:RequestCancelaCFDiType">
+	</xs:element>
+	
+	<xs:complexType name="RequestCancelaCFDiType">
+		<xs:attribute name="rfcEmisor" type="cfdi:t_RFC" use="required">
+		</xs:attribute>
+		<xs:attribute name="rfcReceptor" type="cfdi:t_RFC" use="required">
+		</xs:attribute>
+		<xs:attribute name="uuid" type="xs:string" use="required"></xs:attribute>
+		<xs:attribute name="refID" type="bfref1:refIDType" use="optional">
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:element name="ResponseCancelaCFDi" type="bfcorp2xsd:ResponseCancelaCFDiType">
+	</xs:element>
+
+	<xs:complexType name="ResponseCancelaCFDiType">
+		<xs:sequence>
+			<xs:element ref="bfc1:Result" minOccurs="0" maxOccurs="1"></xs:element>
+		</xs:sequence>
+		<xs:attribute name="canceled" type="xs:boolean" use="required">
+		</xs:attribute>
+		<xs:attribute name="fecha" type="xs:dateTime" use="optional"></xs:attribute>
+	</xs:complexType>
+
+
+	<xs:simpleType name="mesType">
+		<xs:restriction base="xs:int">
+			<xs:maxInclusive value="12"></xs:maxInclusive>
+			<xs:whiteSpace value="collapse"></xs:whiteSpace>
+			<xs:minInclusive value="1"></xs:minInclusive>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="anioType">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="2004"></xs:minInclusive>
+			<xs:whiteSpace value="collapse"></xs:whiteSpace>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:complexType name="InfoCFDiComplexType">
+		<xs:sequence>
+			<xs:element ref="bfr5:InfoEspecial" minOccurs="0"
+				maxOccurs="10">
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute use="optional" name="serie"
+			type="bfr5:serieSimpleType">
+		</xs:attribute>
+		<xs:attribute use="required" name="folio">
+			<xs:simpleType>
+				<xs:restriction base="xs:long">
+					<xs:maxInclusive value="2147483647"></xs:maxInclusive>
+					<xs:minInclusive value="1"></xs:minInclusive>
+					<xs:whiteSpace value="collapse"></xs:whiteSpace>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="required" name="fecha" type="xs:dateTime"></xs:attribute>
+		<xs:attribute use="optional" name="sello">
+			<xs:annotation></xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"></xs:whiteSpace>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute use="optional" name="noCertificado">
+			<xs:annotation></xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="20"></xs:length>
+					<xs:whiteSpace value="collapse"></xs:whiteSpace>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="archivo" type="xs:base64Binary"
+			use="required">
+		</xs:attribute>
+		<xs:attribute name="tipo" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="XML"></xs:enumeration>
+					<xs:enumeration value="ZIP"></xs:enumeration>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="version" type="xs:string" use="required"></xs:attribute>
+		<xs:attribute name="uuid" type="xs:string"></xs:attribute>
+		<xs:attribute name="qr" type="xs:base64Binary"></xs:attribute>
+		<xs:attribute name="fechaTimbrado" type="xs:dateTime"></xs:attribute>
+		<xs:attribute name="refId" type="bfref1:refIDType"></xs:attribute>
+		<xs:attribute use="optional" name="noCertificadoSAT">
+			<xs:annotation></xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:length value="20"></xs:length>
+					<xs:whiteSpace value="collapse"></xs:whiteSpace>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="InfoCFDi" type="bfcorp2xsd:InfoCFDiComplexType">
+	</xs:element>
+</xs:schema>

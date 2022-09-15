@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://www.buzonfiscal.com/ns/addenda/bf/2" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.buzonfiscal.com/ns/addenda/bf/2">
+	<xs:redefine schemaLocation="Addenda_BF_v2.1.xsd">
+
+		<xs:complexType name="AddendaBuzonFiscalType">
+			<xs:complexContent>
+				<xs:extension base="AddendaBuzonFiscalType">
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExtraConceptos"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+
+		<xs:complexType name="ReceptorType">
+			<xs:complexContent>
+				<xs:extension base="ReceptorType">
+					<xs:attribute name="nim" type="xs:string" use="optional"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+
+		<xs:complexType name="CFDType">
+			<xs:complexContent>
+				<xs:extension base="CFDType">
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="InformacionAduanera" type="t_InformacionAduanera"/>
+					</xs:sequence>
+					<xs:attribute name="refID" type="refIDType" use="optional"/>
+					<xs:attribute name="embarque" type="xs:string" use="optional"/>
+					<xs:attribute name="fob" type="xs:string" use="optional"/>
+					<xs:attribute name="cargos" type="t_Importe" use="optional"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:redefine>
+
+	<xs:element name="ExtraConceptos" type="ExtraConceptosType"/>
+
+	<xs:complexType name="t_InformacionAduanera">
+		<xs:annotation>
+			<xs:documentation>Tipo definido para expresar información
+				aduanera</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="numero" use="required">
+			<xs:annotation>
+				<xs:documentation>Atributo requerido para expresar el número
+					del documento aduanero que ampara la importación del bien.
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="fecha" use="required">
+			<xs:annotation>
+				<xs:documentation>Atributo requerido para expresar la fecha
+					de expedición del documento aduanero que ampara la importación del
+					bien.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:date">
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="aduana" use="required">
+			<xs:annotation>
+				<xs:documentation>Atributo requerido para precisar la aduana
+					por la que se efectuó la importación del bien.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="ExtraConceptosType">
+		<xs:attribute name="Referencia1" type="xs:string" use="optional"/>
+		<xs:attribute name="Referencia2" type="xs:string" use="optional"/>
+		<xs:attribute name="Indicador" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+					<xs:pattern value="[A-Z]"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="descripcionIngles" type="xs:string" use="optional"/>
+		<xs:attribute name="numRemision" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:decimal">
+					<xs:fractionDigits value="0"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="cargo" type="t_Importe" use="optional"/>
+		<xs:attribute name="descuento" type="t_Importe" use="optional"/>
+		<xs:attribute name="mensaje" type="xs:string" use="optional"/>
+		<xs:attribute name="tasaImpuesto" type="t_Importe" use="optional"/>
+		<xs:attribute name="impuesto" type="t_Importe" use="optional"/>
+		<xs:attribute name="valorUnitarioMonedaExtranjera" type="t_Importe" use="optional"/>
+		<xs:attribute name="importeMonedaExtranjera" type="t_Importe" use="optional"/>
+	</xs:complexType>
+	<xs:simpleType name="refIDType">
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+								<xs:maxLength value="32"/>
+								<xs:pattern value="\w+"/>
+							</xs:restriction>
+						</xs:simpleType>
+</xs:schema>

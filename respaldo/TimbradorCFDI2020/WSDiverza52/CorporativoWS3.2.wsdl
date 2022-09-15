@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:bfws="http://www.buzonfiscal.com/bf/ws/bfcorp/32"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  name="BuzonFiscalCorporativo" targetNamespace="http://www.buzonfiscal.com/bf/ws/bfcorp/32"
+  xmlns:xsd1="http://www.buzonfiscal.com/ns/xsd/bf/bfcorp/32">
+  <wsdl:types>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:import namespace="http://www.buzonfiscal.com/ns/xsd/bf/bfcorp/32"
+        schemaLocation="CorporativoWS3.2.xsd"> </xsd:import>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      targetNamespace="http://www.buzonfiscal.com/bf/ws/bfcorp/32"> </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="generaCFDiRequest">
+    <wsdl:part element="xsd1:RequestGeneraCFDi" name="requestGeneraCFDi"/>
+  </wsdl:message>
+  <wsdl:message name="generaCFDiResponse">
+    <wsdl:part element="xsd1:ResponseGeneraCFDi" name="responseGeneraCFDi"/>
+  </wsdl:message>
+  <wsdl:message name="cancelaCFDiRequest">
+    <wsdl:part name="requestCancelaCFDi" element="xsd1:RequestCancelaCFDi"/>
+  </wsdl:message>
+  <wsdl:message name="cancelaCFDiResponse">
+    <wsdl:part name="responseCancelaCFDi" element="xsd1:ResponseCancelaCFDi"/>
+  </wsdl:message>
+  <wsdl:portType name="BuzonFiscalCorporativoPort">
+    <wsdl:operation name="generaCFDi">
+      <wsdl:input message="bfws:generaCFDiRequest"/>
+      <wsdl:output message="bfws:generaCFDiResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="cancelaCFDi">
+      <wsdl:input message="bfws:cancelaCFDiRequest"/>
+      <wsdl:output message="bfws:cancelaCFDiResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BuzonFiscalCorporativoBinding" type="bfws:BuzonFiscalCorporativoPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="generaCFDi">
+      <soap:operation soapAction="http://www.buzonfiscal.com/CorporativoWS3.1/generaCFDi"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cancelaCFDi">
+      <soap:operation soapAction="http://www.buzonfiscal.com/CorporativoWS3.1/cancelaCFDi"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BuzonFiscalCorporativoWS">
+    <wsdl:port binding="bfws:BuzonFiscalCorporativoBinding" name="BuzonFiscalCorporativoPort">
+      <soap:address location="https://demonegocios.buzonfiscal.com/bfcorpcfdiws"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

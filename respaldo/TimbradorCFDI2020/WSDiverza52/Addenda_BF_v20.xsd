@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Eduardo Valadez (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.buzonfiscal.com/ns/addenda/bf/2" targetNamespace="http://www.buzonfiscal.com/ns/addenda/bf/2" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="AddendaBuzonFiscal" type="AddendaBuzonFiscalType">
+		<xs:annotation>
+			<xs:documentation>Nodo para expresar los atributos adicionales de un CFD en Buzon Fiscal</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="t_Ubicacion">
+		<xs:annotation>
+			<xs:documentation>Tipo definido para expresar domicilios o direcciones</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="calle" use="optional">
+			<xs:annotation>
+				<xs:documentation>Este atributo opcional sirve para precisar la avenida, calle, camino o carretera donde se da la ubicación.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="0"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="numero" use="optional">
+			<xs:annotation>
+				<xs:documentation>Este atributo opcional sirve para expresar el número particular en donde se da la ubicación sobre una calle dada.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="0"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="referencia" use="optional">
+			<xs:annotation>
+				<xs:documentation>Atributo opcional para expresar una referencia de ubicación adicional.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="0"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="colonia" use="optional">
+			<xs:annotation>
+				<xs:documentation>Este atributo opcional sirve para precisar la colonia en donde se da la ubicación cuando se desea ser más específico en casos de ubicaciones urbanas.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="0"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="ciudad" use="optional">
+			<xs:annotation>
+				<xs:documentation>Atributo opcional que sirve para precisar la ciudad o población donde se da la ubicación.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="0"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="municipio" use="optional">
+			<xs:annotation>
+				<xs:documentation>Atributo opcional que sirve para precisar el municipio o delegación (en el caso del Distrito Federal) en donde se da la ubicación.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="0"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="estado" use="optional">
+			<xs:annotation>
+				<xs:documentation>Atributo opcional que sirve para precisar el estado o entidad federativa donde se da la ubicación.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="0"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="pais" use="optional">
+			<xs:annotation>
+				<xs:documentation>Atributo requerido que sirve para precisar el país donde se da la ubicación.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="0"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="codigoPostal" use="optional">
+			<xs:annotation>
+				<xs:documentation>Atributo opcional que sirve para asentar el código postal en donde se da la ubicación.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:simpleType name="t_RFC">
+		<xs:annotation>
+			<xs:documentation>Tipo definido para expresar claves del Registro Federal de Contribuyentes</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="12"/>
+			<xs:maxLength value="13"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="t_Importe">
+		<xs:annotation>
+			<xs:documentation>Tipo definido para expresar importes numéricos con fracción a dos decimales</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2"/>
+			<xs:whiteSpace value="collapse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AddendaBuzonFiscalType">
+		<xs:sequence>
+			<xs:element ref="Emisor" minOccurs="0"/>
+			<xs:element ref="Remitente" minOccurs="0"/>
+			<xs:element ref="ExpedidoEn" minOccurs="0"/>
+			<xs:element ref="Receptor" minOccurs="0"/>
+			<xs:element ref="Destino" minOccurs="0"/>
+			<xs:element ref="TipoDocumento"/>
+			<xs:element ref="CFD" minOccurs="0"/>
+			<xs:element ref="Retenciones" minOccurs="0"/>
+			<xs:element ref="Extra" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="ExtraConceptos" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="version" type="xs:decimal" use="required" fixed="2.0"/>
+	</xs:complexType>
+	<xs:complexType name="EmisorType">
+		<xs:attribute name="telefono" type="xs:string" use="optional"/>
+		<xs:attribute name="fax" type="xs:string" use="optional"/>
+		<xs:attribute name="emailNotificaciones" type="xs:string" use="optional"/>
+		<xs:attribute name="emailComercial" type="xs:string" use="optional"/>
+		<xs:attribute name="web" type="xs:string" use="optional"/>
+		<xs:attribute name="GLN" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="RemitenteType">
+		<xs:complexContent>
+			<xs:extension base="t_Ubicacion">
+				<xs:attribute name="claveIdentificacion" type="xs:string"/>
+				<xs:attribute name="rfc" type="xs:string"/>
+				<xs:attribute name="nombre" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ExpedidoEnType">
+		<xs:attribute name="alias" type="xs:string" use="required"/>
+		<xs:attribute name="telefono" type="xs:string" use="optional"/>
+		<xs:attribute name="fax" type="xs:string" use="optional"/>
+		<xs:attribute name="email" type="xs:string" use="optional"/>
+		<xs:attribute name="GLN" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="ReceptorType">
+		<xs:attribute name="telefono" type="xs:string" use="optional"/>
+		<xs:attribute name="fax" type="xs:string" use="optional"/>
+		<xs:attribute name="email" type="xs:string" use="optional"/>
+		<xs:attribute name="web" type="xs:string" use="optional"/>
+		<xs:attribute name="nim" type="xs:string" use="optional"/>
+		<xs:attribute name="GLN" type="xs:string" use="optional"/>
+		<xs:attribute name="noCliente" type="xs:string" use="optional"/>
+		<xs:attribute name="noProveedor" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="DestinoType">
+		<xs:complexContent>
+			<xs:extension base="t_Ubicacion">
+				<xs:attribute name="claveIdentificacion" type="xs:string"/>
+				<xs:attribute name="rfc" type="xs:string"/>
+				<xs:attribute name="nombre" type="xs:string"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TipoDocumentoType">
+		<xs:attribute name="nombreCorto" type="NombreCortoType" use="required"/>
+		<xs:attribute name="descripcion" type="DescripcionType" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="CFDType">
+		<xs:sequence>
+			<xs:element name="InformacionAduanera" type="t_InformacionAduanera" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="vigente" type="xs:boolean" use="optional"/>
+		<xs:attribute name="fechaEnvio" type="xs:dateTime" use="optional"/>
+		<xs:attribute name="fechaCancelacion" type="xs:dateTime" use="optional"/>
+		<xs:attribute name="fechaValidacion" type="xs:dateTime" use="optional"/>
+		<xs:attribute name="valido" type="xs:boolean" use="optional"/>
+		<xs:attribute name="razonNoValido" type="xs:string" use="optional"/>
+		<xs:attribute name="porcentajeDescuento" type="t_Importe" use="optional"/>
+		<xs:attribute name="noOrden" type="xs:string" use="optional"/>
+		<xs:attribute name="comprador" type="xs:string" use="optional"/>
+		<xs:attribute name="tipoMoneda" type="xs:string" use="optional"/>
+		<xs:attribute name="tipoCambio" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:decimal">
+					<xs:fractionDigits value="4"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="fechaTipoCambio" type="xs:dateTime" use="optional"/>
+		<xs:attribute name="agenteVentas" type="xs:string" use="optional"/>
+		<xs:attribute name="observaciones" type="xs:string" use="optional"/>
+		<xs:attribute name="totalConLetra" type="xs:string" use="optional"/>
+		<xs:attribute name="cargos" type="xs:string" use="optional"/>
+		<xs:attribute name="refID" type="refIDType" use="optional"/>
+		<xs:attribute name="embarque" type="xs:string" use="optional"/>
+		<xs:attribute name="fob" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="RetencionesType">
+		<xs:sequence>
+			<xs:element ref="Retencion" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExtraType">
+		<xs:attribute name="atributo" type="xs:string" use="required"/>
+		<xs:attribute name="valor" type="xs:string" use="required"/>
+		<xs:attribute name="prefijo" type="xs:string" use="optional"/>
+		<xs:attribute name="sufijo" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:element name="Emisor" type="EmisorType"/>
+	<xs:element name="Remitente" type="RemitenteType"/>
+	<xs:element name="ExpedidoEn" type="ExpedidoEnType"/>
+	<xs:element name="Receptor" type="ReceptorType"/>
+	<xs:element name="Destino" type="DestinoType"/>
+	<xs:element name="TipoDocumento" type="TipoDocumentoType"/>
+	<xs:element name="CFD" type="CFDType"/>
+	<xs:element name="Retenciones" type="RetencionesType"/>
+	<xs:element name="Extra" type="ExtraType"/>
+	<xs:element name="Retencion" type="RetencionType"/>
+	<xs:element name="ExtraConceptos" type="ExtraConceptosType"/>
+	<xs:complexType name="RetencionType">
+		<xs:attribute name="impuesto" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="ISR"/>
+					<xs:enumeration value="IVA"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="importe" type="t_Importe" use="required"/>
+		<xs:attribute name="tasa" type="t_Importe" use="optional" default="10.00"/>
+	</xs:complexType>
+	<xs:simpleType name="NombreCortoType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FAC"/>
+			<xs:enumeration value="NCR"/>
+			<xs:enumeration value="NCA"/>
+			<xs:enumeration value="RHO"/>
+			<xs:enumeration value="RAR"/>
+			<xs:enumeration value="CPO"/>
+			<xs:enumeration value="CSI"/>
+			<xs:enumeration value="DDE"/>
+			<xs:enumeration value="SP"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DescripcionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Factura"/>
+			<xs:enumeration value="Nota de Credito"/>
+			<xs:enumeration value="Nota de Cargo"/>
+			<xs:enumeration value="Recibo de Honorarios"/>
+			<xs:enumeration value="Recibo de Arrendamiento"/>
+			<xs:enumeration value="Carta Porte"/>
+			<xs:enumeration value="Comprobante Simplificado"/>
+			<xs:enumeration value="Donativo Deducible"/>
+			<xs:enumeration value="Estado de Cuenta"/>
+			<xs:enumeration value="Comprobante Fiscal Digital para el Sector Primario"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="t_InformacionAduanera">
+		<xs:annotation>
+			<xs:documentation>
+        Tipo definido para expresar información
+        aduanera
+      </xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="numero" use="required">
+			<xs:annotation>
+				<xs:documentation>
+          Atributo requerido para expresar el número
+          del documento aduanero que ampara la importación del bien.
+        </xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="fecha" use="required">
+			<xs:annotation>
+				<xs:documentation>
+          Atributo requerido para expresar la fecha
+          de expedición del documento aduanero que ampara la importación del
+          bien.
+        </xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:date">
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="aduana" use="required">
+			<xs:annotation>
+				<xs:documentation>
+          Atributo requerido para precisar la aduana
+          por la que se efectuó la importación del bien.
+        </xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ExtraConceptosType">
+		<xs:attribute name="Referencia1" type="xs:string" use="optional"/>
+		<xs:attribute name="Referencia2" type="xs:string" use="optional"/>
+		<xs:attribute name="Indicador" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+				
+					<xs:whiteSpace value="collapse"/>
+					
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="descripcionIngles" type="xs:string" use="optional"/>
+		<xs:attribute name="numRemision" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:decimal">
+					<xs:fractionDigits value="0"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="cargo" type="t_Importe" use="optional"/>
+		<xs:attribute name="descuento" type="t_Importe" use="optional"/>
+		<xs:attribute name="mensaje" type="xs:string" use="optional"/>
+		<xs:attribute name="tasaImpuesto" type="t_Importe" use="optional"/>
+		<xs:attribute name="impuesto" type="t_Importe" use="optional"/>
+		<xs:attribute name="valorUnitarioMonedaExtranjera" type="t_Importe" use="optional"/>
+		<xs:attribute name="importeMonedaExtranjera" type="t_Importe" use="optional"/>
+	</xs:complexType>
+	<xs:simpleType name="refIDType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="32"/>
+			<xs:pattern value="\w+"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

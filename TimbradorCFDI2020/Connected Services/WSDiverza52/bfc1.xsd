@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://www.buzonfiscal.com/ns/bf/conector/1" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.buzonfiscal.com/ns/bf/conector/1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:annotation>
+    <xsd:documentation>Esquema para representar mensajes del procesamiento</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="messageType">
+    <xsd:annotation>
+      <xsd:documentation>Tipo de dato para mensaje que indica alguna situación de excepción en el procesamiento</xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="code" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Código de procesamiento</xsd:documentation>
+      </xsd:annotation>
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:int">
+          <xsd:minExclusive value="0" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+    <xsd:attribute name="message" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Mensaje de procesamiento</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="file" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Archivo procesado</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="location" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>Localización en el archivo a la que se refiere el mensaje</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:element name="Result">
+    <xsd:annotation>
+      <xsd:documentation>Elemento que encapsula los mensajes derivados del procesamiento</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="Message" type="messageType">
+          <xsd:annotation>
+            <xsd:documentation>Mensajes de procesamiento</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute fixed="1" name="version" type="xsd:int" use="required">
+        <xsd:annotation>
+          <xsd:documentation>Versión del formato de resultado</xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

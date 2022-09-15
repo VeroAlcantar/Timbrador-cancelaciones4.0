@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5c664d62-05c8-48c2-b004-057cf56174ce" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\timbradorvisual2017\TimbradorCFDI2020\TimbradorCFDI2020\WSDiverza52\CorporativoWS3.2.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RequestGeneraCFDI.xsd" MetadataType="Schema" ID="04fcf5df-c640-4e5c-a8fc-5f5b76a8a012" SourceId="1" SourceUrl="file:///C:/timbradorvisual2017/TimbradorCFDI2020/TimbradorCFDI2020/WSDiverza52/RequestGeneraCFDI.xsd" />
+    <MetadataFile FileName="BuzonFiscalCorporativo.wsdl" MetadataType="Wsdl" ID="61e2d56f-01f2-4aa5-be38-9b80c41e3cd8" SourceId="1" SourceUrl="file:///C:/timbradorvisual2017/TimbradorCFDI2020/TimbradorCFDI2020/WSDiverza52/CorporativoWS3.2.wsdl" />
+    <MetadataFile FileName="RemisionV5.xsd" MetadataType="Schema" ID="6e165c34-39da-45be-accf-ba5103ac2f16" SourceId="1" SourceUrl="file:///C:/timbradorvisual2017/TimbradorCFDI2020/TimbradorCFDI2020/WSDiverza52/RemisionV5.2.xsd" />
+    <MetadataFile FileName="RefIDv1.xsd" MetadataType="Schema" ID="6c09f1c1-b45f-4627-87f4-8f192bd4bf6f" SourceId="1" SourceUrl="file:///C:/timbradorvisual2017/TimbradorCFDI2020/TimbradorCFDI2020/WSDiverza52/RefIDv1.0.xsd" />
+    <MetadataFile FileName="cfdv32.xsd" MetadataType="Schema" ID="8dc29256-961b-45f9-aec3-ca8fe6d87696" SourceId="1" SourceUrl="file:///C:/timbradorvisual2017/TimbradorCFDI2020/TimbradorCFDI2020/WSDiverza52/cfdv32.xsd" />
+    <MetadataFile FileName="CorporativoWS3.xsd" MetadataType="Schema" ID="472fdd9e-432e-4639-a5c4-7e9210f3a2aa" SourceId="1" SourceUrl="file:///C:/timbradorvisual2017/TimbradorCFDI2020/TimbradorCFDI2020/WSDiverza52/CorporativoWS3.2.xsd" />
+    <MetadataFile FileName="bfc1.xsd" MetadataType="Schema" ID="0a3d90e7-0395-44ea-bdf5-cd0ce4b0dacd" SourceId="1" SourceUrl="file:///C:/timbradorvisual2017/TimbradorCFDI2020/TimbradorCFDI2020/WSDiverza52/bfc1.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

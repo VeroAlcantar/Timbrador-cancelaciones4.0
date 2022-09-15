@@ -1,0 +1,24 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.buzonfiscal.com/ns/xsd/bf/bfcorp/3" xmlns:ns1="http://www.buzonfiscal.com/ns/xsd/bf/remision/5">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:RequestGeneraCFDi>
+         <ns1:Remision version="5.0">
+            <ns1:InfoBasica rfcEmisor="AAA010101AAA" rfcReceptor="CCC010101CCC" serie="A" aliasSucursal="?" folio="10">
+               <!--0 to 10 repetitions:-->
+            </ns1:InfoBasica>
+            <ns1:InfoAdicional formaDePago="Efectivo" subTotal="50" descuento="1" total="49" metodoDePago="Efectivo" tipoDeComprobante="ingreso" moneda="MXN" tipoCambio="1"/>
+            <!--Optional:-->
+            <ns1:Emisor nombre="Emisor Prueba"/>
+
+            <ns1:Receptor nombre="Receptor Demo"/>
+            <!--Optional:-->
+
+            <ns1:Conceptos>
+               <!--1 or more repetitions:-->
+               <ns1:Concepto cantidad="1" unidad="X" descripcion="producto prueba" valorUnitario="50" importe="50">
+               </ns1:Concepto>
+            </ns1:Conceptos>
+         </ns1:Remision>
+      </ns:RequestGeneraCFDi>
+   </soapenv:Body>
+</soapenv:Envelope>

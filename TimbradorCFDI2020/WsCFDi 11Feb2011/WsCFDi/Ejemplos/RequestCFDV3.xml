@@ -1,0 +1,64 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="http://www.buzonfiscal.com/ns/xsd/bf/bfcorp/3" xmlns:ns1="http://www.buzonfiscal.com/ns/xsd/bf/remision/5">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ns:RequestGeneraCFDi>
+         <ns1:Remision version="5.0">
+            <ns1:InfoBasica rfcEmisor="?" rfcReceptor="?" rfcSolicitante="?" serie="?" aliasSucursal="?" refID="?" folio="?">
+               <!--0 to 10 repetitions:-->
+               <ns1:InfoEspecial atributo="?" valor="?"/>
+            </ns1:InfoBasica>
+            <ns1:InfoAdicional formaDePago="?" condicionesDePago="?" subTotal="?" descuento="?" motivoDescuento="?" total="?" metodoDePago="?" tipoDeComprobante="?" moneda="?" tipoCambio="?"/>
+            <!--Optional:-->
+            <ns1:Emisor nombre="?"/>
+            <!--Optional:-->
+            <ns1:DomicilioFiscal calle="?" noExterior="?" noInterior="?" colonia="?" localidad="?" referencia="?" municipio="?" estado="?" pais="?" codigoPostal="?"/>
+            <!--Optional:-->
+            <ns1:ExpedidoEn calle="?" noExterior="?" noInterior="?" colonia="?" localidad="?" referencia="?" municipio="?" estado="?" pais="?" codigoPostal="?"/>
+            <!--Optional:-->
+            <ns1:Receptor nombre="?"/>
+            <!--Optional:-->
+            <ns1:DomicilioReceptor calle="?" noExterior="?" noInterior="?" colonia="?" localidad="?" referencia="?" municipio="?" estado="?" pais="?" codigoPostal="?"/>
+            <ns1:Conceptos>
+               <!--1 or more repetitions:-->
+               <ns1:Concepto cantidad="?" unidad="?" noIdentificacion="?" descripcion="?" valorUnitario="?" importe="?">
+                  <!--You have a CHOICE of the next 4 items at this level-->
+                  <!--Zero or more repetitions:-->
+                  <ns1:InformacionAduanera numero="?" fecha="?" aduana="?"/>
+                  <!--Optional:-->
+                  <ns1:CuentaPredial numero="?"/>
+                  <!--Optional:-->
+                  <ns1:ComplementoConcepto>
+                     <!--You may enter ANY elements at this point-->
+                  </ns1:ComplementoConcepto>
+                  <!--Zero or more repetitions:-->
+                  <ns1:Parte cantidad="?" unidad="?" noIdentificacion="?" descripcion="?" valorUnitario="?" importe="?">
+                     <!--Zero or more repetitions:-->
+                     <ns1:InformacionAduanera numero="?" fecha="?" aduana="?"/>
+                  </ns1:Parte>
+               </ns1:Concepto>
+            </ns1:Conceptos>
+            <!--Optional:-->
+            <ns1:Impuestos totalImpuestosRetenidos="?" totalImpuestosTrasladados="?">
+               <!--Optional:-->
+               <ns1:Retenciones>
+                  <!--1 or more repetitions:-->
+                  <ns1:Retencion impuesto="?" importe="?"/>
+               </ns1:Retenciones>
+               <!--Optional:-->
+               <ns1:Traslados>
+                  <!--1 or more repetitions:-->
+                  <ns1:Traslado impuesto="?" tasa="?" importe="?"/>
+               </ns1:Traslados>
+            </ns1:Impuestos>
+            <!--Optional:-->
+            <ns1:Complemento>
+               <!--You may enter ANY elements at this point-->
+            </ns1:Complemento>
+            <!--Optional:-->
+            <ns1:Addenda>
+               <!--You may enter ANY elements at this point-->
+            </ns1:Addenda>
+         </ns1:Remision>
+      </ns:RequestGeneraCFDi>
+   </soapenv:Body>
+</soapenv:Envelope>

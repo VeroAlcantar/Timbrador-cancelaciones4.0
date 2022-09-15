@@ -1,0 +1,9 @@
+C:\timbradorvisual2017\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.exe.config
+C:\timbradorvisual2017\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.exe
+C:\timbradorvisual2017\TimbradorCFDI2020\TimbradorCFDI2020\bin\Debug\TimbradorCFDI2020.pdb
+C:\timbradorvisual2017\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.Properties.Resources.resources
+C:\timbradorvisual2017\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.VistaInicial.resources
+C:\timbradorvisual2017\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.csproj.GenerateResource.cache
+C:\timbradorvisual2017\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.csproj.CoreCompileInputs.cache
+C:\timbradorvisual2017\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.exe
+C:\timbradorvisual2017\TimbradorCFDI2020\TimbradorCFDI2020\obj\Debug\TimbradorCFDI2020.pdb
